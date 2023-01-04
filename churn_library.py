@@ -1,8 +1,8 @@
 '''
-Package that hold functions transfered from jupyter notebook.
+Package that holds functions from jupyter notebook
 
 Author: Faz Naimov
-Date: 1/1/2023
+Date: 1/2/2023
 '''
 
 # import libraries
