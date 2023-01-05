@@ -18,8 +18,6 @@ The directories structure are list as below:
 ├── data
 │   └── bank_data.csv
 ├── images
-│   ├── eda
-│   └── results
 ├── logs
 │   └── churn_library.log
 ├── models
