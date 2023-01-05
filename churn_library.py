@@ -92,7 +92,7 @@ def perform_eda(bank_df):
     sns_plot.figure.savefig('./images/corr.png')
 
 
-def encoder_helper(bank_df, category_lst):
+def encoder_helper(bank_df, category_lst, y_field):
     '''
     helper function to turn each categorical column into a new column with
     propotion of churn for each category - associated with cell 15 from the notebook
@@ -100,20 +100,25 @@ def encoder_helper(bank_df, category_lst):
     input:
             bank_df: pandas dataframe
             category_lst: list of columns that contain categorical features
+            y_field: str column name of y data
 
     output:
             df: pandas dataframe with new columns for
     '''
+    bank_df[y_field] = bank_df['Attrition_Flag'].apply(
+        lambda val: 0 if val == "Existing Customer" else 1)
+
     for cat in category_lst:
-        bank_df[cat + '_Churn'] = bank_df[cat].map(bank_df.groupby(cat).mean()['Churn'])
+        bank_df[cat + '_' + y_field] = bank_df[cat].map(bank_df.groupby(cat).mean()[y_field])
     return bank_df
 
 
-def perform_feature_engineering(bank_df, keep_cols):
+def perform_feature_engineering(bank_df, keep_cols, y_field):
     '''
     input:
               bank_df: pandas dataframe
               keep_cols: list of columns that model is trained on
+              y_field: str column name of y data
 
     output:
               x_train: X training data
@@ -122,7 +127,7 @@ def perform_feature_engineering(bank_df, keep_cols):
               y_test: y testing data
     '''
 
-    y_data = bank_df['Churn']
+    y_data = bank_df[y_field]
     x_data = pd.DataFrame()
     x_data[keep_cols] = bank_df[keep_cols]
     x_train, x_test, y_train, y_test = train_test_split(
