@@ -37,7 +37,7 @@ More description on some files and folders included in the project:
 - `churn_script.py`: contains script that runs the functions from `churn_library.py`
 - `churn_script_logging_and_tests.py`: used for testing functions in churn_library module
 - `data`: the directory that contains the data file used in this project
-- `images`: used for saving images of data analysis and model analysis. Contains 2 folders: `eda` and `results`
+- `images`: used for saving images of data analysis and model analysis
 - `logs`: contains log generated from running testing script
 - `models`: used for storing model that are ready to use in production
 
