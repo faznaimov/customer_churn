@@ -85,7 +85,7 @@ python churn_script_logging_and_tests.py
 ```
 
 script execution generates
-- Log file ```./logs/results.log```
+- Log file ```./logs/churn_library.log```
 
 ## License
 Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. See ```LICENSE``` for more information.
