@@ -72,10 +72,9 @@ Run the following command to execute the main script
 python churn_script.py
 ``` 
 script execution generates
-- EDA plots are available in directory ```./images/eda/```
-- Model metrics are available in directory ```./images/results/```
+- EDA and model metrics plots are available in directory ```./images/```
 - Model pickle files are available in directory ```./models/```
-- Log files are available in directory ```./logs/results.log``` 
+- Log files are available in directory ```./logs/churn_library.log``` 
 
 ### Testing and Logging
 
