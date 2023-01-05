@@ -46,11 +46,11 @@ if __name__ == "__main__":
     perform_eda(bank_data_df)
 
     # ecoding
-    encoded_df = encoder_helper(bank_data_df, category_list)
+    encoded_df = encoder_helper(bank_data_df, category_list, 'Churn')
 
     # data split
     X_TRAIN, X_TEST, Y_TRAIN, Y_TEST, X_DATA = perform_feature_engineering(
-        encoded_df, KEEP_COLS)
+        encoded_df, KEEP_COLS, 'Churn')
 
     Y_TRAIN_PREDS_LR, Y_TRAIN_PREDS_RF, Y_TEST_PREDS_LR, Y_TEST_PREDS_RF, CV_RFC = train_models(
         X_TRAIN, X_TEST, Y_TRAIN, Y_TEST, params)
