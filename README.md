@@ -12,7 +12,7 @@ The aim of this project is to demonstrate my competencies in writing clean code,
 - Implement best practices such as errors handling, testing and logging
 
 ## Files and data description
-The directories structure are list as below:
+The directory structure:
 ```bash
 .
 ├── data
